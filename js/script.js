@@ -31,6 +31,9 @@ function startTimer() {
             } else {
                 clearInterval(timerInterval);
                 running = false;
+                time = timeBreak;
+                updateTimerDisplay();
+                startTimer();
             }
         }, 1000);
     }

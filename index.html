@@ -37,22 +37,22 @@
             </div>
         </div>
 
-        <!-- Modal -->
+        <!-- Modal para ajustes -->
         <div id="settingsModal" class="modal" style="display: none;">
             <div class="modal-content">
                 <span class="close" onclick="closeSettings()">&times;</span>
                 <h2>Ajustes</h2>
-                <label for="workTime">Tiempo de trabajo (minutos):</label>
-                <input type="number" id="workTime" name="workTime" value="45">
+                <label for="workMinutes">Minutos de trabajo:</label>
+                <input type="number" id="workMinutes" min="1" value="25">
                 <br>
-                <label for="breakTime">Tiempo de descanso (minutos):</label>
-                <input type="number" id="breakTime" name="breakTime" value="15">
+                <label for="breakMinutes">Minutos de descanso:</label>
+                <input type="number" id="breakMinutes" min="1" value="5">
                 <br>
-                <button onclick="saveSettings()">Guardar</button>
+                <button id="saveSettings">Guardar</button>
             </div>
         </div>
 
         <!-- Audio para las campanas -->
         <audio id="bellSound" src="sounds/bell-sound.mp3" preload="auto"></audio>
-    </body>s
+    </body>
 </html>
