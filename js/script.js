@@ -32,6 +32,7 @@ function startTimer() {
                 clearInterval(timerInterval);
                 running = false;
                 time = timeBreak;
+                document.getElementById('frase').textContent = 'Tiempo de descanso';
                 updateTimerDisplay();
                 startTimer();
             }
