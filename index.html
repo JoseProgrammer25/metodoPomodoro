@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/style.css">
+        <title>Pomodore Method</title>
+    </head>
+    <body>
+        <script src="js/script.js"></script>
+        <div class="container">
+            <div class="cuadrado-atras"></div>
+            <div class="cuadrado-adelante">
+                <button title="Ajustes" class="settings" onclick="openSettings()">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48">
+                        <path d="M14.647 4.081a.724 .724 0 0 0 1.08 .448c2.439 -1.485 5.23 1.305 3.745 3.744a.724 .724 0 0 0 .447 1.08c2.775 .673 2.775 4.62 0 5.294a.724 .724 0 0 0 -.448 1.08c1.485 2.439 -1.305 5.23 -3.744 3.745a.724 .724 0 0 0 -1.08 .447c-.673 2.775 -4.62 2.775 -5.294 0a.724 .724 0 0 0 -1.08 -.448c-2.439 1.485 -5.23 -1.305 -3.745 -3.744a.724 .724 0 0 0 -.447 -1.08c-2.775 -.673 -2.775 -4.62 0 -5.294a.724 .724 0 0 0 .448 -1.08c-1.485 -2.439 1.305 -5.23 3.744 -3.745a.722 .722 0 0 0 1.08 -.447c.673 -2.775 4.62 -2.775 5.294 0zm-2.647 4.919a3 3 0 1 0 0 6a3 3 0 0 0 0 -6z"></path>
+                    </svg>
+                </button> 
+                <button title="Analíticas" class="analytics" onclick="openAnalytics()">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="48" height="48" stroke-width="2">
+                        <path d="M3 3v18h18"></path>
+                        <path d="M20 18v3"></path>
+                        <path d="M16 16v5"></path>
+                        <path d="M12 13v8"></path>
+                        <path d="M8 16v5"></path>
+                        <path d="M3 11c6 0 5 -5 9 -5s3 5 9 5"></path>
+                    </svg>
+                </button>
+                <h1>Metodo Pomoro</h1>
+                <h1 id="timer" style="color: #39f778;">25:00</h1>
+                <p id="frase">Tiempo de trabajo</p>
+                <div>
+                    <button class="start" title="Iniciar" onclick="startTimer()">Iniciar</button>
+                    <button class="pause" title="Pausar" onclick="pauseTimer()">Pausar</button>
+                    <button class="reset" title="Reiniciar" onclick="resetTimer()">Reiniciar</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div id="settingsModal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <span class="close" onclick="closeSettings()">&times;</span>
+                <h2>Ajustes</h2>
+                <label for="workTime">Tiempo de trabajo (minutos):</label>
+                <input type="number" id="workTime" name="workTime" value="45">
+                <br>
+                <label for="breakTime">Tiempo de descanso (minutos):</label>
+                <input type="number" id="breakTime" name="breakTime" value="15">
+                <br>
+                <button onclick="saveSettings()">Guardar</button>
+            </div>
+        </div>
+
+        <!-- Audio para las campanas -->
+        <audio id="bellSound" src="sounds/bell-sound.mp3" preload="auto"></audio>
+    </body>s
+</html>

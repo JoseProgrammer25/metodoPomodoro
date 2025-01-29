@@ -1,0 +1,201 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #0f0f10, #1a1a1d); /* Fondo degradado que combina con los colores existentes */
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    position: relative; 
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.cuadrado-atras {
+    width: 500px;
+    height: 600px;
+    background: linear-gradient(to right, #39f778, #fff);
+    rotate: -10deg;
+    border-radius: 1em;
+    position: absolute;
+    top: 45%; 
+    left: 53%; 
+    transform: translate(-50%, -50%);
+    z-index: 0;
+}
+
+.cuadrado-adelante {
+    width: 500px;
+    height: 600px;
+    background: #fff;
+    border-radius: 1em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center; /* Asegura que el texto esté centrado */
+}
+
+.cuadrado-adelante h1 {
+    font-size: 3em;
+    text-align: center;
+}
+
+.cuadrado-adelante p {
+    font-size: 1.5em;
+    padding: 0.5em;
+    text-align: center;
+}
+
+.start, .reset, .pause{
+    background-color: black;
+    color: white;
+    font-size: 1.3em;
+    padding: 0.5em 1em;
+    border-radius: 1em;
+    margin: 0.5em;
+    border: none;
+    cursor: pointer;
+}
+
+.start:hover, .reset:hover {
+    background-color: #333;
+}
+
+.settings, .analytics {
+    position: absolute;
+    top: 10px;
+    background-color: #fff;
+    border: white 1px solid;
+    color: black;
+    padding: 1px 1px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.settings {
+    left: 10px;
+}
+
+.analytics {
+    right: 10px;
+}
+
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed; 
+    z-index: 3; /* Por encima de otros elementos */
+    left: 50;
+    right: 50;
+    top: 50;
+    bottom: 50;
+    width: 100%; /* Asegura que el modal ocupe todo el ancho */
+    height: 100%; /* Asegura que el modal ocupe todo el alto */
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4); /* Fondo negro con opacidad */
+    display: flex; /* Utiliza flexbox para centrar el contenido */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto; /* Centrado vertical y horizontal */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 20%; /* Ancho del modal reducido */
+    height: 40%; /* Altura del modal reducida */
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centrado */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+label {
+    font-size: 24px;
+    margin-top: 1em;
+}
+
+input {
+    padding: 10px 5px;
+    border-radius: 1em;
+    margin-top: 0.3em;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Media Queries para pantallas móviles y tablets */
+@media (max-width: 768px) {
+    .cuadrado-atras, .cuadrado-adelante {
+        width: 90%;
+        height: auto;
+        position: static;
+        transform: none;
+        margin: 10px 0;
+    }
+
+    .cuadrado-adelante {
+        padding: 10px;
+    }
+
+    .cuadrado-adelante h1 {
+        font-size: 2em;
+    }
+
+    .cuadrado-adelante p {
+        font-size: 1.2em;
+    }
+
+    .start, .reset {
+        font-size: 1em;
+        padding: 0.5em;
+    }
+
+    .modal-content {
+        width: 80%;
+        height: auto;
+    }
+
+    label {
+        font-size: 18px;
+    }
+
+    input {
+        width: 100%;
+    }
+}
