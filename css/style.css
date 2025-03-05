@@ -159,6 +159,16 @@ input {
     box-sizing: border-box;
 }
 
+#saveSettings {
+    padding: 0.5em;
+    font-size: 20px;
+    border-radius: 1em;
+    border: none;
+    background-color: #39f778;
+    margin-top: 1em;
+    font-weight: bold;
+}
+
 /* Media Queries para pantallas móviles y tablets */
 @media (max-width: 768px) {
     .cuadrado-atras, .cuadrado-adelante {
