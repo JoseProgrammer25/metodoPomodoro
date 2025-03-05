@@ -3,7 +3,7 @@ let timeBreak = 5 * 60;
 let timer;
 
 function startTimer() {
-    clearInterval(timer); // Limpiar cualquier intervalo previo
+    clearInterval(timer); 
     timer = setInterval(function() {
         if (time <= 0) {
             clearInterval(timer);
@@ -53,16 +53,14 @@ function saveSettings() {
         return;
     }
 
-    // Aplicar el cambio y actualizar el temporizador
     time = workTime * 60;
     timeBreak = breakTime * 60;
-    clearInterval(timer); // Limpiar cualquier intervalo previo
+    clearInterval(timer); 
     closeSettings();
     actualizarTimer();
 }
 
 function actualizarTimer() {
-    // Actualizar el temporizador con los valores introducidos en los settings
     let workTime = document.getElementById('workMinutes').value;
     let breakTime = document.getElementById('breakMinutes').value;
     document.getElementById('timer').innerHTML = `${workTime}:00`;
@@ -74,7 +72,10 @@ function openAnalytics() {
 }
 
 function startBreak() {
-    clearInterval(timer); // Limpiar cualquier intervalo previo
+    clearInterval(timer); 
+    let bellSound = document.getElementById('bellSound');
+    bellSound.volume = 0.3; 
+    bellSound.play(); 
     timer = setInterval(function() {
         if (timeBreak <= 0) {
             clearInterval(timer);
@@ -91,6 +92,9 @@ function startBreak() {
 
 function cambiarAdescanso() {
     clearInterval(timer);
+    let bellSound = document.getElementById('bellSound');
+    bellSound.volume = 0.5; 
+    bellSound.play(); 
     document.getElementById('timer').innerHTML = `${Math.floor(timeBreak / 60)}:00`;
     document.getElementById('frase').innerHTML = "¡Es hora de descansar! Inicia para descansar";
 }
